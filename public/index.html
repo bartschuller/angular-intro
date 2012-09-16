@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="project">
 <head>
   <title>AngularJS Intro</title>
   <link href="/a/css/bootstrap.min.css" rel="stylesheet">
   <link href="/a/css/todo.css" rel="stylesheet">
   <script src="/a/js/angular.min.js"></script>
+  <script src="/a/js/angular-resource.min.js"></script>
   <script src="/a/js/todo.js"></script>
-</head>
+  <script src="/a/js/project.js"></script>
+  <script src="/a/js/mongolab.js"></script></head>
 <body>
 <div class="container-fluid">
   <h1>AngularJS Intro</h1>
@@ -35,6 +37,10 @@
         <input class="btn-primary" type="submit" value="add">
       </form>
     </div>
+  </div>
+  <div class="well">
+    <h1>JavaScript Projects</h1>
+    <div ng-view></div>
   </div>
 </div>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
