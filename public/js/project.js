@@ -1,4 +1,4 @@
-angular.module('project', ['mongolab']).
+angular.module('project', ['mongolab', 'ui']).
   config(function($routeProvider) {
     $routeProvider.
       when('/', {controller:ListCtrl, templateUrl:'list.html'}).
@@ -45,4 +45,9 @@ function EditCtrl($scope, $location, $routeParams, Project) {
       $location.path('/');
     });
   };
+}
+
+function ModalCtrl($scope) {
+	$scope.modalShown = false;
+  $scope.title = "Modal dialogs"
 }
