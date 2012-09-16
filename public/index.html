@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+  <title>AngularJS Intro</title>
+  <link href="/a/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/a/css/todo.css" rel="stylesheet">
+  <script src="/a/js/angular.min.js"></script>
+  <script src="/a/js/todo.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+  <h1>AngularJS Intro</h1>
+
+  <div class="well">
+    <h1>Simple data binding</h1>
+    <label for="name">Name: </label>
+    <input type="text" id="name" ng-model="yourName" placeholder="Your name">
+    <hr>
+    <h2>Hello, {{yourName}}!</h2>
+  </div>
+  <div class="well">
+    <h1>Todo</h1>
+    <div ng-controller="TodoCtrl">
+      <span>{{remaining()}} of {{todos.length}} remaining</span>
+      [ <a href="" ng-click="archive()">archive</a> ]
+      <ul class="unstyled">
+        <li ng-repeat="todo in todos">
+          <input type="checkbox" ng-model="todo.done">
+          <span class="done-{{todo.done}}">{{todo.text}}</span>
+        </li>
+      </ul>
+      <form ng-submit="addTodo()">
+        <input type="text" ng-model="todoText" size="30"
+               placeholder="add new todo here">
+        <input class="btn-primary" type="submit" value="add">
+      </form>
+    </div>
+  </div>
+</div>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<!--<script src="/a/js/bootstrap.min.js"></script>-->
+</body>
+</html>
